@@ -1,0 +1,91 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>37389ed6-5d52-4b7d-9d68-d74f42bb5e3a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LieDetectionApplication</Name>
+    <RootNamespace>LieDetectionApplication</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|ContinuumAnalytics|Anaconda36-64</InterpreterId>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>-p .\shape_predictor_68_face_landmarks.dat -v ".\video.mp4"</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Classifier.py" />
+    <Compile Include="Ear Retrieval Scripts\NegativeEarIntervalCreation.py" />
+    <Compile Include="Ear Retrieval Scripts\PositiveEarCalculation.py" />
+    <Compile Include="SvmDetector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NaifDetector.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ear Retrieval Scripts\" />
+    <Folder Include="Data\" />
+    <Folder Include="Test Sets\" />
+    <Folder Include="Training Sets\" />
+    <Folder Include="Training Sets\Negative_EarBlinks\" />
+    <Folder Include="Training Sets\Positive_EarBlinks\" />
+    <Folder Include="Videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ear Retrieval Scripts\Ear_Calculation.ps1" />
+    <Content Include="Ear Retrieval Scripts\Ear_Retrieval_Eyeblink8.ps1" />
+    <Content Include="shape_predictor_68_face_landmarks.dat" />
+    <Content Include="Test Sets\negative_ear.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear9.txt" />
+    <Content Include="Test Sets\positive_ear.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear8.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear8.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear2.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear3.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear4.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear5.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear6.txt" />
+    <Content Include="Training Sets\Negative_EarBlinks\negative_ear7.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear2.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear3.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear4.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear5.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear6.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear7.txt" />
+    <Content Include="Training Sets\Positive_EarBlinks\positive_ear9.txt" />
+    <Content Include="Videos\VeritaAnna1.mp4" />
+    <Content Include="Videos\VeritaAnna2.mp4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
